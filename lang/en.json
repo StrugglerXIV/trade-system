@@ -1,0 +1,6 @@
+{
+  "TRADE.Request": "Request Trade",
+  "TRADE.Accept": "Accept Trade",
+  "TRADE.Lock": "Lock Offer",
+  "TRADE.Complete": "Complete Trade"
+}

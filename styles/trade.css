@@ -1,0 +1,20 @@
+.trade-window {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.trade-panel {
+  border: 2px solid #4b4b4b;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.item-list {
+  min-height: 200px;
+  border: 1px dashed #666;
+}
+
+.lock-trade:disabled {
+  background: #ff000050;
+}

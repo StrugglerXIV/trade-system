@@ -1,0 +1,39 @@
+{
+  "id": "trade-system",
+  "title": "MMORPG-Style Trade System",
+  "description": "Secure player-to-player trading with dual-panel confirmation for D&D 5e.",
+  "version": "1.0.0",
+  "authors": [{"name": "Denis"}],
+  "socket": true,
+  "scripts": [
+    "scripts/sockets.js",
+    "scripts/trade-helpers.js",
+    "scripts/TradeWindow.js",
+    "scripts/trade.js"
+  ],
+  "styles": ["styles/trade.css"],
+  "relationships": {
+    "requires": [
+      {
+        "id": "socketlib",
+        "type": "module",
+        "manifest": "https://github.com/farling42/foundryvtt-socketlib/releases/latest/download/module.json"
+      }
+    ]
+  },
+  "system": ["dnd5e"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12.331",
+    "verified": "12.331",
+    "maximum": "12.999"
+  },
+  "url": "https://github.com/yourname/trade-system",
+  "manifest": "https://raw.githubusercontent.com/yourname/trade-system/main/module.json"
+}
