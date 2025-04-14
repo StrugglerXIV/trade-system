@@ -2,7 +2,7 @@
   "id": "trade-system",
   "title": "MMORPG-Style Trade System",
   "description": "Secure player-to-player trading with dual-panel confirmation for D&D 5e.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [{"name": "Denis"}],
   "socket": true,
   "scripts": [
