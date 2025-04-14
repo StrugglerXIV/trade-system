@@ -5,29 +5,22 @@ export function registerSockets() {
   const socket = socketlib.registerModule("trade-system");
 
   // Trade request from Player A to Player B
-  socket.register("requestTrade", (requesterId, targetId) => {
-    const requester = game.users.get(requesterId);
-    const target = game.users.get(targetId);
-    
-    new Dialog({
-      title: game.i18n.localize("TRADE.Request"),
-      content: `
-        <p>${requester.name} wants to trade with you!</p>
-        <p>Accept to open the trade window.</p>
-      `,
-      buttons: {
-        accept: {
-          icon: '<i class="fas fa-check"></i>',
-          label: game.i18n.localize("TRADE.Accept"),
-          callback: () => socket.executeAsUser("openTradeWindow", requesterId, targetId)
-        },
-        reject: {
-          icon: '<i class="fas fa-times"></i>',
-          label: "Reject"
-        }
-      }
-    }).render(true);
-  });
+socket.register("requestTrade", (requesterId, targetActorId) => {
+  const requester = game.users.get(requesterId);
+  const targetActor = game.actors.get(targetActorId);
+  
+  new Dialog({
+    title: "Trade Request",
+    content: `${requester.name} wants to trade with ${targetActor.name}`,
+    buttons: {
+      accept: {
+        label: "Accept",
+        callback: () => TradeWindow.open(requesterId, targetActorId)
+      },
+      reject: { label: "Reject" }
+    }
+  }).render(true);
+});
 
   // Open trade window for both players
   socket.register("openTradeWindow", (player1Id, player2Id) => {
