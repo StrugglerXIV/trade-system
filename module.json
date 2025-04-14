@@ -6,6 +6,7 @@
   "authors": [{"name": "Denis"}],
   "socket": true,
   "scripts": [
+    "scripts/token-trade.js",
     "scripts/sockets.js",
     "scripts/trade-helpers.js",
     "scripts/TradeWindow.js",
